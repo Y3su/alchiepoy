@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import FindProperties from "@/components/FindProperties";
-import DedicatedSection from "@/components/DedicatedSection";
-import GetInTouch from "@/components/GetInTouch";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import FindProperties from "@/components/home/FindProperties";
+import DedicatedSection from "@/components/home/DedicatedSection";
+import GetInTouch from "@/components/home/GetInTouch";
 
 const Index = () => {
   return (

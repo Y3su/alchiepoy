@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, User } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -22,22 +23,28 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-surface/90 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
+          ? "bg-surface/90 backdrop-blur-md shadow-sm py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">A</span>
-          </div>
-          <span className={`font-bold text-lg tracking-tight ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+        {/* Logo + Brand */}
+        <a href="#home" className="flex items-center gap-2.5">
+          <img
+            src={logo}
+            alt="AlchiepoY Real Estate logo"
+            className="h-9 md:h-10 w-auto object-contain"
+          />
+          <span
+            className={`font-bold text-lg tracking-tight transition-colors ${
+              scrolled ? "text-foreground" : "text-primary-foreground"
+            }`}
+          >
             ALCHIEPOY
           </span>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — centered */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -62,6 +69,7 @@ const Navbar = () => {
                 ? "bg-primary text-primary-foreground"
                 : "bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30"
             }`}
+            aria-label="Account"
           >
             <User className="w-4 h-4" />
           </button>
@@ -70,6 +78,7 @@ const Navbar = () => {
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
           >
             {mobileOpen ? (
               <X className={`w-5 h-5 ${scrolled ? "text-foreground" : "text-primary-foreground"}`} />
@@ -83,13 +92,13 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-surface border-t border-border animate-fade-in">
-          <nav className="container py-4 flex flex-col gap-3">
+          <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-foreground font-medium py-2 px-3 rounded-lg hover:bg-muted transition-colors"
+                className="text-foreground font-medium py-2.5 px-3 rounded-lg hover:bg-muted transition-colors"
               >
                 {link.label}
               </a>

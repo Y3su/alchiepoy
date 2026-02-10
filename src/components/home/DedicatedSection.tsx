@@ -35,7 +35,7 @@ const DedicatedSection = () => {
               Dedicated to the<br />joy of home
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              At Alchiepoy Real Estate, we believe that finding the perfect home is more than a transaction — it's a journey. Our dedicated team works tirelessly to match you with properties that fit your lifestyle, needs, and dreams. With years of experience and a deep understanding of the market, we ensure every step is seamless.
+              At Alchiepoy Real Estate, we believe that finding the perfect home is more than a transaction — it's a journey. Our dedicated team works tirelessly to match you with properties that fit your lifestyle, needs, and dreams.
             </p>
             <a
               href="#contact"
@@ -47,35 +47,14 @@ const DedicatedSection = () => {
 
           {/* Image grid */}
           <div className="grid grid-cols-2 gap-4">
-            <div
-              className={`rounded-2xl overflow-hidden row-span-2 transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              <img
-                src={images[0]}
-                alt="Family moving in"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+            <div className={`rounded-2xl overflow-hidden row-span-2 transition-all duration-700 delay-200 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <img src={images[0]} alt="Family moving in" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-            <div
-              className={`rounded-2xl overflow-hidden transition-all duration-700 delay-300 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              <img
-                src={images[1]}
-                alt="Modern interior"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+            <div className={`rounded-2xl overflow-hidden transition-all duration-700 delay-300 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <img src={images[1]} alt="Modern interior" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-            <div
-              className={`rounded-2xl overflow-hidden transition-all duration-700 delay-[400ms] group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              <img
-                src={images[2]}
-                alt="Community aerial"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+            <div className={`rounded-2xl overflow-hidden transition-all duration-700 delay-[400ms] group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <img src={images[2]} alt="Community aerial" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
           </div>
         </div>
