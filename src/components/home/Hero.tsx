@@ -38,7 +38,7 @@ const Hero = () => {
           </a>
           <a
             href="#properties"
-            className="px-8 py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5 transition-all duration-300"
+            className="px-8 py-3.5 border border-primary-foreground/20 text-primary-foreground font-semibold rounded-xl bg-primary-foreground/10 backdrop-blur-md hover:bg-primary-foreground/20 hover:border-primary-foreground/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-foreground/10 transition-all duration-300 supports-[not(backdrop-filter)]:bg-navy/60"
           >
             Browse Categories
           </a>
