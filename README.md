@@ -23,41 +23,55 @@ The app will be available at `http://localhost:5173`.
 ## Project Structure
 
 ```
-src/
-├── assets/              # Images, logo, and static assets
-│   ├── logo.png         # Official brand logo
-│   └── hero-bg.jpg      # Hero section background
-├── components/
-│   ├── home/            # Home page sections
-│   │   ├── Hero.tsx         # Hero banner + search bar
-│   │   ├── Preloader.tsx    # Splash screen on initial load
-│   │   ├── FindProperties.tsx  # Property category cards
-│   │   ├── DedicatedSection.tsx # About/mission section
-│   │   └── GetInTouch.tsx   # Contact form + info
-│   ├── layout/          # Shared layout components
-│   │   ├── Navbar.tsx       # Sticky navigation bar
-│   │   └── Footer.tsx       # Site footer
-│   └── ui/              # Reusable UI primitives (shadcn)
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions (cn, helpers)
-├── pages/               # Route-level page components
-│   ├── Index.tsx            # Home page
-│   └── NotFound.tsx         # 404 page
-├── index.css            # Global styles + design tokens (CSS variables)
-└── main.tsx             # App entry point
-
-tailwind.config.ts       # Tailwind theme + custom colors
+├── public/                  # Static public assets (favicon, robots.txt)
+├── src/
+│   ├── assets/              # Images and static assets (imported as ES6 modules)
+│   │   ├── logo.png         # Official brand logo
+│   │   ├── hero-bg.jpg      # Hero section background
+│   │   ├── about-1.jpg      # About/mission section images
+│   │   ├── about-2.jpg
+│   │   ├── about-3.jpg
+│   │   ├── house-lot.jpg    # Property category card images
+│   │   ├── condominium.jpg
+│   │   └── farm-lot.jpg
+│   ├── components/
+│   │   ├── home/            # Home page sections (rendered in order)
+│   │   │   ├── Preloader.tsx     # Animated splash screen on initial load
+│   │   │   ├── Hero.tsx          # Hero banner with search bar
+│   │   │   ├── FindProperties.tsx # Property category cards
+│   │   │   ├── DedicatedSection.tsx # About/mission section
+│   │   │   └── GetInTouch.tsx    # Contact form + info
+│   │   ├── layout/          # Shared layout components
+│   │   │   ├── Navbar.tsx        # Sticky blurred navigation bar
+│   │   │   └── Footer.tsx        # Site footer with links & socials
+│   │   └── ui/              # Reusable UI primitives (shadcn/ui)
+│   ├── hooks/               # Custom React hooks (e.g., use-mobile)
+│   ├── lib/                 # Utility functions (cn helper, etc.)
+│   ├── pages/               # Route-level page components
+│   │   ├── Index.tsx             # Home page (assembles all home sections)
+│   │   └── NotFound.tsx          # 404 page
+│   ├── test/                # Test setup and test files
+│   ├── index.css            # Global styles + design tokens (CSS variables)
+│   ├── App.tsx              # Router setup and app shell
+│   └── main.tsx             # App entry point
+├── tailwind.config.ts       # Tailwind theme, custom colors, and animations
+├── vite.config.ts           # Vite bundler configuration
+└── vitest.config.ts         # Test runner configuration
 ```
 
 ### Quick Reference
 
-| Task | Location |
-|------|----------|
+| Task | Where to look |
+|------|---------------|
 | Change hero image | Replace `src/assets/hero-bg.jpg` |
 | Edit navbar links | `src/components/layout/Navbar.tsx` → `navLinks` array |
-| Edit buttons/inputs | `src/components/ui/` |
+| Edit property categories | `src/components/home/FindProperties.tsx` |
+| Change preloader timing | `src/components/home/Preloader.tsx` → timing constants at top |
+| Edit buttons/inputs | `src/components/ui/` (shadcn components) |
 | Change brand colors | `src/index.css` → `:root` CSS variables |
+| Change fonts / typography | `src/index.css` + `index.html` (Google Fonts link) |
 | Add a new page | Create in `src/pages/`, add route in `src/App.tsx` |
+| Add a new home section | Create in `src/components/home/`, import in `src/pages/Index.tsx` |
 
 ## Tech Stack
 
