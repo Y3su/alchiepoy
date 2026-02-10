@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 
-const WORD_IN_DELAY = 120;   // ms between each word appearing
-const WORD_IN_DURATION = 400; // ms for each word's fade-in
-const HOLD = 300;             // pause after all words visible
-const WORD_OUT_DELAY = 80;    // ms between each word exiting (faster)
-const WORD_OUT_DURATION = 350;
-const EXIT_DURATION = 500;
-const MAX_TIMEOUT = 3500;
+const WORD_IN_DELAY = 250;   // ms between each word appearing
+const WORD_IN_DURATION = 600; // ms for each word's fade-in
+const HOLD = 600;             // pause after all words visible
+const WORD_OUT_DELAY = 180;   // ms between each word exiting
+const WORD_OUT_DURATION = 500;
+const EXIT_DURATION = 700;
+const MAX_TIMEOUT = 6000;
 
 const SUBTITLE = "Alchiepoy Real Estate";
 const HEADLINE: Array<{ text: string; highlight?: boolean }> = [
