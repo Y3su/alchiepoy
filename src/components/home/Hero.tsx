@@ -12,7 +12,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy/80" />
       </div>
 
       {/* Content */}
@@ -22,7 +22,7 @@ const Hero = () => {
         </p>
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up-delay-1 text-balance">
           CARE MAKES THE{" "}
-          <span className="text-gold">DIFFERENCE</span>
+          <span className="text-primary">DIFFERENCE</span>
         </h1>
         <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-up-delay-2">
           Find your dream property with Alchiepoy Real Estate — where every detail matters.
@@ -38,7 +38,7 @@ const Hero = () => {
           </a>
           <a
             href="#properties"
-            className="px-8 py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 hover:-translate-y-0.5 transition-all duration-300"
+            className="px-8 py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-xl hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5 transition-all duration-300"
           >
             Browse Categories
           </a>

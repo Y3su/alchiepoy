@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,10 +8,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">A</span>
-              </div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <img
+                src={logo}
+                alt="AlchiepoY Real Estate logo"
+                className="h-9 w-auto object-contain brightness-0 invert"
+              />
               <span className="font-bold text-lg">Alchiepoy Real Estate</span>
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs">

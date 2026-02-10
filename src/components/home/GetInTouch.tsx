@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Phone, Mail, MapPin, Facebook, MessageCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import logo from "@/assets/logo.png";
 
 const GetInTouch = () => {
   const { toast } = useToast();
@@ -56,16 +57,14 @@ const GetInTouch = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Reach Out</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Get In Touch</h2>
-          <p className="text-muted-foreground mt-2">Meet our distinguished leadership team driving the vision and growth of PropManage.</p>
+          <p className="text-muted-foreground mt-2">Have questions? We'd love to hear from you.</p>
         </div>
 
         <div className={`grid lg:grid-cols-5 gap-10 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           {/* Left info */}
           <div className="lg:col-span-2 space-y-8">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">A</span>
-              </div>
+            <div className="flex items-center gap-2.5">
+              <img src={logo} alt="AlchiepoY Real Estate logo" className="h-9 w-auto object-contain" />
               <span className="font-bold text-lg text-foreground">ALCHIEPOY</span>
             </div>
 
@@ -109,59 +108,32 @@ const GetInTouch = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm font-medium text-foreground mb-1 block">First Name</label>
-                <input
-                  className={inputClass("firstName")}
-                  placeholder="First Name"
-                  value={form.firstName}
-                  onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                />
+                <input className={inputClass("firstName")} placeholder="First Name" value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} />
                 {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName}</p>}
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-1 block">Last Name</label>
-                <input
-                  className={inputClass("lastName")}
-                  placeholder="Last Name"
-                  value={form.lastName}
-                  onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                />
+                <input className={inputClass("lastName")} placeholder="Last Name" value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} />
               </div>
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1 block">Email</label>
-              <input
-                type="email"
-                className={inputClass("email")}
-                placeholder="name@example.com"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-              />
+              <input type="email" className={inputClass("email")} placeholder="name@example.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1 block">Phone Number</label>
-              <input
-                className={inputClass("phone")}
-                placeholder="Phone Number"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              />
+              <input className={inputClass("phone")} placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1 block">Message</label>
-              <textarea
-                rows={4}
-                className={inputClass("message")}
-                placeholder="Write us a message..."
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-              />
+              <textarea rows={4} className={inputClass("message")} placeholder="Write us a message..." value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
               {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto px-8 py-3.5 bg-gold text-accent-foreground font-semibold rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
               Send Message
