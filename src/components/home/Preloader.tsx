@@ -91,12 +91,13 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-navy transition-all ease-out ${
-        isExit
-          ? "opacity-0 scale-[0.88] blur-[2px] duration-500"
-          : "opacity-100 scale-100 blur-0 duration-300"
-      }`}
-      style={{ pointerEvents: isExit ? "none" : "auto" }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-navy"
+      style={{
+        pointerEvents: isExit ? "none" : "auto",
+        transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
+        transform: isExit ? "translateY(-100%)" : "translateY(0)",
+        opacity: isExit ? 0 : 1,
+      }}
       aria-hidden="true"
     >
       <div className="text-center px-6">
