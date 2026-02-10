@@ -1,4 +1,4 @@
-# AlchiepoY Real Estate
+# Alchiepoy Real Estate
 
 AlchiepoY is a modern real estate website for showcasing properties, helping users search listings, browse categories, and contact the team.
 
