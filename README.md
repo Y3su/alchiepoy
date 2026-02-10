@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# AlchiepoY Real Estate
 
-## Project info
+AlchiepoY is a modern real estate website for showcasing properties, helping users search listings, browse categories, and contact the team.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Getting Started
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+- [Node.js](https://nodejs.org/) (v18+)
+- npm or [bun](https://bun.sh/)
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── assets/              # Images, logo, and static assets
+│   ├── logo.png         # Official brand logo
+│   └── hero-bg.jpg      # Hero section background
+├── components/
+│   ├── home/            # Home page sections
+│   │   ├── Hero.tsx         # Hero banner + search bar
+│   │   ├── Preloader.tsx    # Splash screen on initial load
+│   │   ├── FindProperties.tsx  # Property category cards
+│   │   ├── DedicatedSection.tsx # About/mission section
+│   │   └── GetInTouch.tsx   # Contact form + info
+│   ├── layout/          # Shared layout components
+│   │   ├── Navbar.tsx       # Sticky navigation bar
+│   │   └── Footer.tsx       # Site footer
+│   └── ui/              # Reusable UI primitives (shadcn)
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions (cn, helpers)
+├── pages/               # Route-level page components
+│   ├── Index.tsx            # Home page
+│   └── NotFound.tsx         # 404 page
+├── index.css            # Global styles + design tokens (CSS variables)
+└── main.tsx             # App entry point
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+tailwind.config.ts       # Tailwind theme + custom colors
+```
 
-## What technologies are used for this project?
+### Quick Reference
 
-This project is built with:
+| Task | Location |
+|------|----------|
+| Change hero image | Replace `src/assets/hero-bg.jpg` |
+| Edit navbar links | `src/components/layout/Navbar.tsx` → `navLinks` array |
+| Edit buttons/inputs | `src/components/ui/` |
+| Change brand colors | `src/index.css` → `:root` CSS variables |
+| Add a new page | Create in `src/pages/`, add route in `src/App.tsx` |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Tech Stack
 
-## How can I deploy this project?
+- **React 18** + **TypeScript**
+- **Vite** (bundler)
+- **Tailwind CSS** + **shadcn/ui**
+- **React Router** (routing)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Contribution Guidelines
 
-## Can I connect a custom domain to my Lovable project?
+- **Components**: Keep them small and single-responsibility. Place page-specific sections in `components/home/` (or `components/<page>/`), shared layout in `components/layout/`.
+- **Colors**: Never hardcode colors in components. Use semantic tokens from `index.css` (e.g., `text-foreground`, `bg-primary`, `text-muted-foreground`).
+- **Naming**: Use PascalCase for components, camelCase for utilities/hooks.
+- **New pages**: Create the page in `src/pages/`, add a `<Route>` in `src/App.tsx` above the catch-all `*` route.
+- **Styling**: Use Tailwind utility classes. For new design tokens, add CSS variables in `index.css` and register them in `tailwind.config.ts`.
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© Alchiepoy Real Estate. All rights reserved.
