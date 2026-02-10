@@ -12,7 +12,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/20 to-navy/50" />
       </div>
 
       {/* Content */}
